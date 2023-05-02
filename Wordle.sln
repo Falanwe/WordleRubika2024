@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wordle", "Wordle\Wordle.csproj", "{D0943710-76DE-49F9-8AB9-F81DAC3C8BBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordleCommon", "WordleCommon\WordleCommon.csproj", "{D26C2890-14BB-4B3E-BEE3-EFC37288DBB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordleWebApi", "WordleWebApi\WordleWebApi.csproj", "{F9485243-F442-4F89-97A0-58D8E0593F82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0943710-76DE-49F9-8AB9-F81DAC3C8BBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0943710-76DE-49F9-8AB9-F81DAC3C8BBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0943710-76DE-49F9-8AB9-F81DAC3C8BBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0943710-76DE-49F9-8AB9-F81DAC3C8BBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D26C2890-14BB-4B3E-BEE3-EFC37288DBB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D26C2890-14BB-4B3E-BEE3-EFC37288DBB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D26C2890-14BB-4B3E-BEE3-EFC37288DBB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D26C2890-14BB-4B3E-BEE3-EFC37288DBB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9485243-F442-4F89-97A0-58D8E0593F82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9485243-F442-4F89-97A0-58D8E0593F82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9485243-F442-4F89-97A0-58D8E0593F82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9485243-F442-4F89-97A0-58D8E0593F82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D4DC702-5120-447D-BBBD-5CA3B870D23B}
+	EndGlobalSection
+EndGlobal
