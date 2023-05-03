@@ -1,13 +1,11 @@
-﻿using Wordle;
-using Wordle.Models;
-using WordleClient;
+﻿using WordleClientAutoImplemented;
 
 var won = false;
-IWordleService wordleService = new WordleClientService("http://10.51.1.240:8080/");
+var wordleService = new WordleAutoService();
 
-await wordleService.InitAsync();
 
-var gameId = await wordleService.StartGame();
+
+var gameId = await wordleService.Start();
 
 // 6 tentatives
 while (true)
@@ -16,7 +14,7 @@ while (true)
     while (true)
     {
         guess = Console.ReadLine()!;
-        if (!await wordleService.IsAcceptable(guess))
+        if (!await wordleService.IsValid(guess))
         {
             Console.WriteLine("invalid guess");
         }
@@ -29,13 +27,14 @@ while (true)
     var result = await wordleService.Guess(gameId, guess);
 
     Console.ForegroundColor = ConsoleColor.White;
+    var letterStates = result.LetterStates.ToArray();
     for (var index = 0; index < 5; index++)
     {
-        if (result.LetterStates[index] == LetterState.Placed)
+        if (letterStates[index] == LetterState.Placed)
         {
             Console.BackgroundColor = ConsoleColor.DarkGreen;
         }
-        else if (result.LetterStates[index] == LetterState.Misplaced)
+        else if (letterStates[index] == LetterState.Misplaced)
         {
             Console.BackgroundColor = ConsoleColor.DarkYellow;
         }

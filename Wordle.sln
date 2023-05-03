@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordleWebApi", "WordleWebAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordleClient", "WordleClient\WordleClient.csproj", "{49EEAA86-2340-44E7-9A5D-E9FA16EC6A10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordleClientAutoImplemented", "WordleClientAutoImplemented\WordleClientAutoImplemented.csproj", "{A551A10B-0321-4D71-AB27-83D1B030D9CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{49EEAA86-2340-44E7-9A5D-E9FA16EC6A10}.Release|x64.Build.0 = Release|Any CPU
 		{49EEAA86-2340-44E7-9A5D-E9FA16EC6A10}.Release|x86.ActiveCfg = Release|Any CPU
 		{49EEAA86-2340-44E7-9A5D-E9FA16EC6A10}.Release|x86.Build.0 = Release|Any CPU
+		{A551A10B-0321-4D71-AB27-83D1B030D9CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A551A10B-0321-4D71-AB27-83D1B030D9CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A551A10B-0321-4D71-AB27-83D1B030D9CC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A551A10B-0321-4D71-AB27-83D1B030D9CC}.Debug|x64.Build.0 = Debug|Any CPU
+		{A551A10B-0321-4D71-AB27-83D1B030D9CC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A551A10B-0321-4D71-AB27-83D1B030D9CC}.Debug|x86.Build.0 = Debug|Any CPU
+		{A551A10B-0321-4D71-AB27-83D1B030D9CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A551A10B-0321-4D71-AB27-83D1B030D9CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A551A10B-0321-4D71-AB27-83D1B030D9CC}.Release|x64.ActiveCfg = Release|Any CPU
+		{A551A10B-0321-4D71-AB27-83D1B030D9CC}.Release|x64.Build.0 = Release|Any CPU
+		{A551A10B-0321-4D71-AB27-83D1B030D9CC}.Release|x86.ActiveCfg = Release|Any CPU
+		{A551A10B-0321-4D71-AB27-83D1B030D9CC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

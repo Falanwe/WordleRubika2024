@@ -12,14 +12,23 @@ namespace WordleClient
 {
     internal class WordleClientService : IWordleService
     {
+        private readonly HttpClient _httpClient;
 
+        public WordleClientService(string endpoint)
+        {
+            _httpClient = new HttpClient();
+            _httpClient.BaseAddress = new Uri(endpoint);
+        }
 
-        public Task InitAsync() => Task.CompletedTask;
+        public Task InitAsync()
+        {
+
+            return Task.CompletedTask;
+        }
 
         public async ValueTask<int> StartGame()
         {
-            var httpClient = new HttpClient();
-            var postResult = await httpClient.PostAsync("http://10.51.1.240:8080/Wordle/start", JsonContent.Create(""));
+            var postResult = await _httpClient.PostAsync("/Wordle/start", JsonContent.Create(""));
 
             postResult.EnsureSuccessStatusCode();
             return await postResult.Content.ReadFromJsonAsync<int>();
@@ -27,8 +36,7 @@ namespace WordleClient
 
         public async ValueTask<bool> IsAcceptable(string guess)
         {
-            var httpClient = new HttpClient();
-            var postResult = await httpClient.PostAsync("http://10.51.1.240:8080/Wordle/isValid", JsonContent.Create(guess));
+            var postResult = await _httpClient.PostAsync("/Wordle/isValid", JsonContent.Create(guess));
 
             postResult.EnsureSuccessStatusCode();
             return await postResult.Content.ReadFromJsonAsync<bool>();
@@ -36,8 +44,7 @@ namespace WordleClient
 
         public async ValueTask<GuessResult?> Guess(int gameId, string guess)
         {
-            var httpClient = new HttpClient();
-            var postResult = await httpClient.PostAsync($"http://10.51.1.240:8080/Wordle/guess/{gameId}", JsonContent.Create(guess));
+            var postResult = await _httpClient.PostAsync($"/Wordle/guess/{gameId}", JsonContent.Create(guess));
 
             postResult.EnsureSuccessStatusCode();
             return await postResult.Content.ReadFromJsonAsync<GuessResult>();
