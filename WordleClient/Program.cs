@@ -3,7 +3,7 @@ using Wordle.Models;
 using WordleClient;
 
 var won = false;
-IWordleService wordleService = new WordleClientService("http://10.51.1.240:8080/");
+IWordleService wordleService = new WordleClientService("https://wordlewebapi20230503163219.azurewebsites.net/");
 
 await wordleService.InitAsync();
 

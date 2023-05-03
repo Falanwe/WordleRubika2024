@@ -13,7 +13,7 @@ namespace WordleClientAutoImplemented
         public WordleAutoService()
         {
             var httpClient = new HttpClient();
-            _swaggerClient = new swaggerClient("http://10.51.1.240:8080/", httpClient);
+            _swaggerClient = new swaggerClient("https://wordlewebapi20230503163219.azurewebsites.net/", httpClient);
         }
 
         public async Task<int> Start()
