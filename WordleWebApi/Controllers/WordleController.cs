@@ -19,21 +19,21 @@ namespace WordleWebApi.Controllers
         }
 
         [HttpPost("start")]
-        public int StartGame() => _wordleService.StartGame();
+        public ValueTask<int> StartGame() => _wordleService.StartGame();
 
         [HttpPost("isValid")]
-        public bool IsValid([FromBody] string guess) => _wordleService.IsAcceptable(guess);
+        public ValueTask<bool> IsValid([FromBody] string guess) => _wordleService.IsAcceptable(guess);
 
         [HttpPost("guess/{gameId}")]
-        public ActionResult<GuessResult> Guess(int gameId, [FromBody] string guess)
+        public async Task<ActionResult<GuessResult>> Guess(int gameId, [FromBody] string guess)
         {
-            if(!_wordleService.IsAcceptable(guess))
+            if(!await _wordleService.IsAcceptable(guess))
             {
                 return BadRequest("invalid guess");
             }
 
 
-            var result = _wordleService.Guess(gameId, guess);
+            var result = await _wordleService.Guess(gameId, guess);
 
             if(result == null)
             {

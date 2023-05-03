@@ -27,7 +27,7 @@ namespace Wordle
                 }
             }
         }
-        public int StartGame()
+        public async ValueTask<int> StartGame()
         {
             var answer = _answers[Random.Shared.Next(_answers.Count)];
             lock (_currentGames)
@@ -37,13 +37,12 @@ namespace Wordle
             }
         }
 
-        public bool IsAcceptable(string guess) => _acceptablewords!.Contains(guess);
+        public async ValueTask<bool> IsAcceptable(string guess) => _acceptablewords!.Contains(guess);
 
-        public GuessResult? Guess(int gameId, string guess)
+        public async ValueTask<GuessResult?> Guess(int gameId, string guess)
         {
             var result = new GuessResult();
             string answer;
-            int remainingGuesses;            
 
             lock (_currentGames)
             {

@@ -1,8 +1,9 @@
 ﻿using Wordle;
 using Wordle.Models;
+using WordleClient;
 
 var won = false;
-IWordleService wordleService = new WordleService();
+IWordleService wordleService = new WordleClientService();
 
 await wordleService.InitAsync();
 
@@ -47,15 +48,17 @@ while (true)
     Console.ResetColor();
     Console.WriteLine();
 
-    if(result.Won)
+    if (result.Won)
     {
         Console.WriteLine("Congratulations");
         break;
     }
 
-    if(result.RemainingAttempts<= 0)
+    if (result.RemainingAttempts <= 0)
     {
         Console.WriteLine($"Too bad. The word was '{result.Answer}'");
         break;
-    }    
+    }
 }
+
+Console.ReadLine();
